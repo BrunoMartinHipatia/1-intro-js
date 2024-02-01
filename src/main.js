@@ -1,0 +1,49 @@
+
+
+const invoice = {
+    id: 10,
+    name: 'Compras de oficina',
+    date: new Date(),
+    cliente: {
+        id:2,
+        name:'Bruno ',
+        lastname:'Martin Hermoso',
+        age:20,
+    },
+    items:[
+        {
+            producto: 'keyboard',
+            price:50,
+            quantity: 2,
+        },
+        {
+            producto: 'mouse',
+            price:30,
+            quantity: 4,
+
+        },
+        {
+            producto: 'speaker',
+            price:100,
+            quantity: 1,
+        },
+    ],
+    total: function(){
+        let total = 0;
+        this.items.forEach(item=>{
+            total= total + item.price * item.quantity;
+            
+        });
+        return total;
+    },
+    greeting:function(){
+        return `hola ${this.cliente.name} ${this.cliente.lastname} `;
+    }
+};
+console.log(invoice.company?.name)
+console.log(invoice.cliente?.name)
+if(invoice.company?.name){
+    console.log('perfexcto')
+}else{
+    console.log("no viene la empresa")
+}
